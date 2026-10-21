@@ -1,0 +1,2094 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ 구미전자공고 일본어 단어장</title>
+    <!-- 구글 폰트 적용 -->
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* 연핑크 & 하양 테마 디자인 변수 설정 */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+            --secondary-gradient: linear-gradient(135deg, #fbcfe8 0%, #f472b6 100%);
+            --game-gradient: linear-gradient(135deg, #f472b6 0%, #fb7185 100%);
+            --badge-gradient: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            --bg-color: #fff1f2;
+            --card-bg: #ffffff;
+            --text-main: #4a044e;
+            --text-sub: #9d4edd;
+            --pink-accent: #f472b6;
+            --pink-soft: #fce7f3;
+            --accent-green: #10b981;
+            --accent-red: #f43f5e;
+            --radius: 18px;
+            --shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.12), 0 8px 10px -6px rgba(236, 72, 153, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 12px;
+        }
+
+        .app-container {
+            width: 100%;
+            max-width: 500px;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 92vh;
+            max-height: 850px;
+            border: 2px solid #fbcfe8;
+        }
+
+        /* 헤더 */
+        .app-header {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .app-header h1 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .app-header span {
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .app-header p {
+            font-size: 0.82rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        /* 탭 네비게이션 */
+        .tab-nav {
+            display: flex;
+            background: #fdf2f8;
+            padding: 6px;
+            gap: 4px;
+            overflow-x: auto;
+            border-bottom: 1px solid #fbcfe8;
+        }
+
+        .tab-btn {
+            flex: 1;
+            min-width: 65px;
+            padding: 9px 4px;
+            border: none;
+            background: transparent;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #9d174d;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .tab-btn.active {
+            background: white;
+            color: #db2777;
+            box-shadow: 0 2px 8px rgba(219, 39, 119, 0.15);
+        }
+
+        /* 콘텐츠 영역 */
+        .content-area {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .tab-content {
+            display: none;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .tab-content.active {
+            display: flex;
+        }
+
+        /* 1. 입력형 퀴즈 카드 스타일 */
+        .study-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .study-controls select {
+            padding: 6px 12px;
+            border-radius: 10px;
+            border: 1px solid #fbcfe8;
+            font-size: 0.85rem;
+            outline: none;
+            color: #831843;
+            background: #fff;
+            font-weight: 600;
+        }
+
+        .counter-badge {
+            background: #fce7f3;
+            color: #db2777;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 800;
+        }
+
+        .quiz-card {
+            background: white;
+            border: 2px solid #fbcfe8;
+            border-radius: var(--radius);
+            padding: 24px 20px;
+            box-shadow: 0 8px 20px rgba(244, 114, 182, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+            position: relative;
+        }
+
+        .bookmark-star {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.2s;
+        }
+
+        .bookmark-star:active {
+            transform: scale(1.3);
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: #be185d;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .question-meaning {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #831843;
+            margin: 8px 0;
+            text-align: center;
+            word-break: keep-all;
+        }
+
+        .hint-text {
+            font-size: 0.85rem;
+            color: #db2777;
+            background: #fce7f3;
+            padding: 5px 14px;
+            border-radius: 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .input-group {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .japanese-input {
+            width: 100%;
+            padding: 14px;
+            font-size: 1.3rem;
+            text-align: center;
+            border: 2px solid #fbcfe8;
+            border-radius: 12px;
+            outline: none;
+            transition: all 0.2s;
+            font-weight: 700;
+            color: #831843;
+        }
+
+        .japanese-input:focus {
+            border-color: #f472b6;
+            box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.25);
+        }
+
+        .quiz-actions {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .submit-btn {
+            flex: 2;
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(236, 72, 153, 0.25);
+        }
+
+        .skip-btn {
+            flex: 1;
+            background: #fdf2f8;
+            color: #9d174d;
+            border: 1px solid #fbcfe8;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .feedback-box {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 0.95rem;
+            font-weight: 700;
+            animation: fadeIn 0.2s ease-in-out;
+        }
+
+        .feedback-box.correct {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+
+        .feedback-box.wrong {
+            background: #ffe4e6;
+            color: #9f1239;
+            border: 1px solid #fecdd3;
+        }
+
+        /* 2. 🎮 카드 게임 탭 */
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff5f8;
+            border: 1px solid #fbcfe8;
+            padding: 12px 16px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        .game-score {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #be185d;
+        }
+
+        .game-timer {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #e11d48;
+        }
+
+        .game-card-target {
+            background: var(--game-gradient);
+            color: white;
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(244, 114, 182, 0.3);
+        }
+
+        .game-card-target h3 {
+            font-size: 0.8rem;
+            opacity: 0.95;
+            margin-bottom: 4px;
+        }
+
+        .game-card-target h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .option-btn {
+            background: white;
+            border: 2px solid #fbcfe8;
+            border-radius: 12px;
+            padding: 16px 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #831843;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            box-shadow: 0 2px 5px rgba(244, 114, 182, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .option-btn:hover {
+            border-color: #f472b6;
+            background: #fdf2f8;
+        }
+
+        .option-btn.correct-anim {
+            background: #10b981 !important;
+            color: white !important;
+            border-color: #10b981 !important;
+        }
+
+        .option-btn.wrong-anim {
+            background: #f43f5e !important;
+            color: white !important;
+            border-color: #f43f5e !important;
+        }
+
+        .game-start-screen, .game-over-screen {
+            text-align: center;
+            padding: 12px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .game-mode-selector {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            width: 100%;
+            margin-top: 4px;
+        }
+
+        .mode-card-btn {
+            background: white;
+            border: 2px solid #fbcfe8;
+            padding: 12px 6px;
+            border-radius: 14px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #831843;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .mode-card-btn span {
+            font-size: 1.3rem;
+        }
+
+        .mode-card-btn:hover, .mode-card-btn.selected {
+            border-color: #f472b6;
+            background: #fce7f3;
+            color: #db2777;
+        }
+
+        .game-btn {
+            background: var(--game-gradient);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(244, 114, 182, 0.35);
+            width: 100%;
+        }
+
+        .preview-notice {
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: #db2777;
+            background: #fce7f3;
+            padding: 8px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            border: 1px solid #fbcfe8;
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 6px;
+        }
+
+        .memory-card {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #f472b6 0%, #f43f5e 100%);
+            color: white;
+            border-radius: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.05rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            padding: 6px;
+            box-shadow: 0 4px 10px rgba(244, 114, 182, 0.2);
+            user-select: none;
+            word-break: keep-all;
+            border: 2px solid white;
+        }
+
+        .memory-card.flipped {
+            background: white;
+            color: #831843;
+            border: 2px solid #f472b6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .memory-card.matched {
+            background: #10b981;
+            color: white;
+            border: 2px solid #059669;
+            cursor: default;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s;
+        }
+
+        /* 💣 폭탄 해제 게임 전용 스타일 */
+        .bomb-container {
+            background: #fff0f3;
+            border: 2px dashed #f43f5e;
+            padding: 16px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .bomb-icon {
+            font-size: 3rem;
+            animation: pulse 0.8s infinite alternate;
+        }
+
+        .bomb-word {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #e11d48;
+            margin-top: 4px;
+        }
+
+        /* 🧩 낱말 조합 게임 전용 스타일 */
+        .assemble-display {
+            background: #fdf2f8;
+            border: 2px solid #fbcfe8;
+            min-height: 60px;
+            border-radius: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            margin-bottom: 12px;
+        }
+
+        .assembled-char {
+            background: #f472b6;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 800;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .scrambled-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .char-tile {
+            background: white;
+            border: 2px solid #fbcfe8;
+            color: #831843;
+            font-size: 1.3rem;
+            font-weight: 800;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+            transition: transform 0.1s;
+        }
+
+        .char-tile:active {
+            transform: scale(0.9);
+        }
+
+        .char-tile.used {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        /* 3. 📋 랭킹 / 스코어보드 탭 */
+        .ranking-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .ranking-header-box {
+            background: #fff5f8;
+            border: 1px solid #fbcfe8;
+            padding: 14px;
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .ranking-header-box h2 {
+            font-size: 1.1rem;
+            color: #be185d;
+            margin-bottom: 4px;
+        }
+
+        .ranking-header-box p {
+            font-size: 0.8rem;
+            color: #9d174d;
+        }
+
+        .leaderboard-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-height: 480px;
+            overflow-y: auto;
+        }
+
+        .rank-item {
+            background: white;
+            border: 1px solid #fbcfe8;
+            padding: 12px 16px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(244, 114, 182, 0.05);
+        }
+
+        .rank-item.top1 { background: #fffbeb; border-color: #fde68a; }
+        .rank-item.top2 { background: #f8fafc; border-color: #e2e8f0; }
+        .rank-item.top3 { background: #fff7ed; border-color: #ffedd5; }
+
+        .rank-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .rank-num {
+            font-weight: 800;
+            font-size: 1.1rem;
+            width: 28px;
+            text-align: center;
+        }
+
+        .rank-name {
+            font-weight: 700;
+            color: #4a044e;
+            font-size: 0.95rem;
+        }
+
+        .rank-score {
+            font-weight: 800;
+            color: #db2777;
+            font-size: 1rem;
+        }
+
+        /* 4. 🎖️ 칭호 & 뱃지 탭 */
+        .badge-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .badge-card {
+            background: white;
+            border: 2px solid #fbcfe8;
+            border-radius: 14px;
+            padding: 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            opacity: 0.55;
+            filter: grayscale(80%);
+            transition: all 0.3s;
+        }
+
+        .badge-card.unlocked {
+            opacity: 1;
+            filter: grayscale(0%);
+            border-color: #f472b6;
+            box-shadow: 0 4px 12px rgba(244, 114, 182, 0.15);
+            background: #fffdfd;
+        }
+
+        .badge-icon {
+            font-size: 2.2rem;
+            background: #fce7f3;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+        }
+
+        .badge-info h3 {
+            font-size: 0.95rem;
+            color: #831843;
+            margin-bottom: 2px;
+        }
+
+        .badge-info p {
+            font-size: 0.78rem;
+            color: #be185d;
+        }
+
+        .badge-status {
+            margin-left: auto;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 10px;
+            background: #e2e8f0;
+            color: #64748b;
+        }
+
+        .badge-card.unlocked .badge-status {
+            background: #fce7f3;
+            color: #db2777;
+        }
+
+        /* 5. 사진 업로드 탭 */
+        .upload-card {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .upload-card h2 { font-size: 1.15rem; color: #831843; }
+        .upload-card p { font-size: 0.85rem; color: var(--text-sub); }
+
+        .dropzone {
+            border: 2px dashed #fbcfe8;
+            border-radius: var(--radius);
+            padding: 24px;
+            background: #fff5f8;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 160px;
+            transition: border-color 0.2s;
+        }
+
+        .dropzone:hover { border-color: #f472b6; }
+        .upload-icon { font-size: 2.2rem; margin-bottom: 8px; }
+        .sub-text { font-size: 0.75rem; color: #be185d; margin-top: 4px; }
+
+        #preview-img {
+            max-width: 100%;
+            max-height: 140px;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .primary-btn {
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(236, 72, 153, 0.25);
+        }
+
+        .primary-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .success-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .full-width { width: 100%; }
+
+        .result-box {
+            margin-top: 16px;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 14px;
+            border-radius: var(--radius);
+        }
+
+        .result-box h3 { font-size: 0.95rem; color: #166534; margin-bottom: 10px; }
+
+        .extracted-list {
+            max-height: 130px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .extracted-item {
+            background: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #dcfce7;
+        }
+
+        /* 6. 단어장 관리 탭 */
+        .list-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .list-header h2 { font-size: 1.1rem; color: #831843; }
+
+        .stats-box {
+            font-size: 0.78rem;
+            color: #9d174d;
+            display: flex;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .search-filter-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        #search-input {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 10px;
+            border: 1px solid #fbcfe8;
+            font-size: 0.85rem;
+            outline: none;
+            color: #831843;
+        }
+
+        .danger-btn {
+            background: #ffe4e6;
+            color: #e11d48;
+            border: 1px solid #fecdd3;
+            padding: 0 12px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .word-table-container {
+            flex: 1;
+            overflow-y: auto;
+            border: 1px solid #fbcfe8;
+            border-radius: 12px;
+            background: white;
+        }
+
+        .word-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+            text-align: left;
+        }
+
+        .word-table th {
+            background: #fdf2f8;
+            color: #831843;
+            padding: 10px 8px;
+            font-weight: 700;
+            border-bottom: 1px solid #fbcfe8;
+            position: sticky;
+            top: 0;
+        }
+
+        .word-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #fff1f2;
+            color: #4a044e;
+        }
+
+        .badge {
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .badge.complete { background: #d1fae5; color: #065f46; }
+        .badge.incomplete { background: #fef3c7; color: #92400e; }
+
+        .small-del-btn {
+            background: transparent;
+            border: none;
+            color: #f472b6;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .small-del-btn:hover { color: #e11d48; }
+
+        .hidden { display: none !important; }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            color: #9d174d;
+        }
+
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            z-index: 100;
+            font-weight: 700;
+            color: #db2777;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #fce7f3;
+            border-top: 4px solid #f472b6;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        .nickname-input {
+            width: 80%;
+            padding: 10px;
+            border: 2px solid #fbcfe8;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            text-align: center;
+            margin-top: 6px;
+            outline: none;
+            font-weight: 700;
+            color: #831843;
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- 헤더 영역 -->
+        <header class="app-header">
+            <h1>🌸 <span>구미전자공고</span> 일본어 단어장</h1>
+            <p>사진 찍고, 퀴즈 풀고, 게임으로 완전 정복!</p>
+        </header>
+
+        <!-- 네비게이션 탭 -->
+        <nav class="tab-nav">
+            <button class="tab-btn active" data-tab="tab-study">⌨️ 퀴즈</button>
+            <button class="tab-btn" data-tab="tab-game">🎮 게임(4종)</button>
+            <button class="tab-btn" data-tab="tab-ranking">📋 랭킹</button>
+            <button class="tab-btn" data-tab="tab-badge">🎖️ 칭호/뱃지</button>
+            <button class="tab-btn" data-tab="tab-upload">📸 AI등록</button>
+            <button class="tab-btn" data-tab="tab-list">📚 단어장</button>
+        </nav>
+
+        <!-- 메인 콘텐츠 영역 -->
+        <main class="content-area">
+            
+            <!-- 1. 히라가나 입력 퀴즈 탭 -->
+            <section id="tab-study" class="tab-content active">
+                <div class="study-controls">
+                    <select id="filter-status">
+                        <option value="all">전체 단어</option>
+                        <option value="incomplete" selected>미완료 (복습 필요)</option>
+                        <option value="complete">완료 (외운 단어)</option>
+                        <option value="starred">⭐️ 별표 단어만 (북마크)</option>
+                    </select>
+                    <span id="card-counter" class="counter-badge">0 / 0</span>
+                </div>
+
+                <!-- 입력형 퀴즈 카드 -->
+                <div class="quiz-card" id="quiz-card">
+                    <span id="quiz-star" class="bookmark-star">☆</span>
+                    <span class="card-tag">다음 뜻에 맞는 히라가나는?</span>
+                    <h2 class="question-meaning" id="question-meaning">사과</h2>
+                    
+                    <span class="hint-text" id="btn-hint">💡 발음 힌트 보기</span>
+
+                    <div class="input-group">
+                        <input type="text" id="answer-input" class="japanese-input" placeholder="히라가나 입력..." autocomplete="off">
+                    </div>
+
+                    <!-- 정답/오답 결과 메시지 박스 -->
+                    <div id="feedback-box" class="feedback-box hidden"></div>
+
+                    <div class="quiz-actions">
+                        <button id="btn-skip" class="skip-btn">건너뛰기</button>
+                        <button id="btn-submit" class="submit-btn">정답 확인 (Enter)</button>
+                    </div>
+                </div>
+
+                <!-- 빈 상태 메시지 -->
+                <div id="empty-study" class="empty-state hidden">
+                    <p>🎉 해당 조건의 단어를 모두 맞췄거나 등록된 단어가 없습니다!</p>
+                    <button class="primary-btn" onclick="switchTab('tab-upload')">사진 찍으러 가기 📸</button>
+                </div>
+            </section>
+
+            <!-- 2. 🎮 미니게임 4종 선택 & 진행 탭 -->
+            <section id="tab-game" class="tab-content">
+                <!-- 게임 선택 화면 -->
+                <div id="game-start-view" class="game-start-screen">
+                    <h2 style="color: #831843;">🎮 일본어 미니게임 모드 (4종)</h2>
+                    <p style="font-size: 0.8rem; color: #be185d;">원하는 게임을 선택하여 플레이하세요!</p>
+                    
+                    <div class="game-mode-selector">
+                        <div class="mode-card-btn selected" id="mode-speed" onclick="selectGameMode('speed')">
+                            <span>⚡</span>
+                            <div>스피드 4지선다</div>
+                        </div>
+                        <div class="mode-card-btn" id="mode-memory" onclick="selectGameMode('memory')">
+                            <span>🧩</span>
+                            <div>짝맞추기 메모리</div>
+                        </div>
+                        <div class="mode-card-btn" id="mode-bomb" onclick="selectGameMode('bomb')">
+                            <span>💣</span>
+                            <div>단어 폭탄 해제</div>
+                        </div>
+                        <div class="mode-card-btn" id="mode-assemble" onclick="selectGameMode('assemble')">
+                            <span>🔤</span>
+                            <div>글자 조합 하기</div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 0.85rem; color: #e11d48; font-weight: 800;">⏱️ 제한시간: 60초</p>
+                    <button id="btn-start-game" class="game-btn">🚀 게임 시작하기!</button>
+                </div>
+
+                <!-- 게임 진행 공통 화면 -->
+                <div id="game-play-view" class="hidden">
+                    <div class="game-header">
+                        <span class="game-score">🏆 점수: <strong id="game-score-num">0</strong>점</span>
+                        <span class="game-timer">⏳ 남은시간: <strong id="game-timer-num">60</strong>초</span>
+                    </div>
+
+                    <!-- 모드 1: 4지선다 게임 -->
+                    <div id="game-view-speed" class="hidden">
+                        <div class="game-card-target">
+                            <h3>알맞은 히라가나 카드를 고르세요!</h3>
+                            <h2 id="game-target-meaning">뜻 표시</h2>
+                        </div>
+                        <div class="options-grid" id="options-grid"></div>
+                    </div>
+
+                    <!-- 모드 2: 짝맞추기 메모리 게임 -->
+                    <div id="game-view-memory" class="hidden">
+                        <div class="preview-notice" id="preview-notice">👀 3초 동안 카드를 잘 기억하세요!</div>
+                        <div class="memory-grid" id="memory-grid"></div>
+                    </div>
+
+                    <!-- 모드 3: 💣 단어 폭탄 해제 게임 -->
+                    <div id="game-view-bomb" class="hidden">
+                        <div class="bomb-container">
+                            <div class="bomb-icon">💣</div>
+                            <div style="font-size: 0.8rem; color: #be185d; font-weight: 700;">폭탄이 터지기 전에 알맞은 뜻을 고르세요!</div>
+                            <div class="bomb-word" id="bomb-target-word">히라가나</div>
+                        </div>
+                        <div class="options-grid" id="bomb-options-grid"></div>
+                    </div>
+
+                    <!-- 모드 4: 🔤 글자 조합 게임 -->
+                    <div id="game-view-assemble" class="hidden">
+                        <div class="game-card-target" style="padding: 12px; margin-bottom: 10px;">
+                            <h3>제시된 뜻에 맞춰 글자를 터치해 완성하세요!</h3>
+                            <h2 id="assemble-target-meaning" style="font-size: 1.5rem;">뜻 표시</h2>
+                        </div>
+                        <div class="assemble-display" id="assemble-display">
+                            <!-- 완성되는 히라가나 조각 표시 -->
+                        </div>
+                        <div class="scrambled-grid" id="scrambled-grid">
+                            <!-- 흩어진 히라가나 버튼 -->
+                        </div>
+                        <button id="btn-reset-assemble" class="skip-btn" style="margin-top: 10px; width: 100%;">🔄 글자 다시 누르기</button>
+                    </div>
+                </div>
+
+                <!-- 게임 종료 및 랭킹 등록 화면 -->
+                <div id="game-over-view" class="game-over-screen hidden">
+                    <h2 style="color: #be185d;">🎉 TIME OVER! 🎉</h2>
+                    <p id="game-result-msg" style="color: #831843;">최종 점수: 0점</p>
+                    
+                    <input type="text" id="player-nickname" class="nickname-input" placeholder="랭킹 등록 닉네임 입력 (예: 김구미)" maxlength="8">
+                    <button id="btn-save-score" class="primary-btn full-width" style="margin-top: 4px;">🏆 랭킹보드에 점수 등록하기</button>
+                    <button id="btn-restart-game" class="game-btn" style="margin-top: 4px;">🔄 다시 도전하기</button>
+                </div>
+            </section>
+
+            <!-- 3. 📋 랭킹 / 스코어보드 탭 -->
+            <section id="tab-ranking" class="tab-content">
+                <div class="ranking-container">
+                    <div class="ranking-header-box">
+                        <h2>🏆 학급 명예의 전당</h2>
+                        <p>친구들과 게임 점수를 겨뤄보세요!</p>
+                    </div>
+
+                    <div class="leaderboard-list" id="leaderboard-list"></div>
+                </div>
+            </section>
+
+            <!-- 4. 🎖️ 칭호 & 뱃지 탭 -->
+            <section id="tab-badge" class="tab-content">
+                <div class="ranking-header-box" style="margin-bottom: 12px;">
+                    <h2>🎖️ 내 학습 업적 & 칭호</h2>
+                    <p>단어를 외우고 미션을 완수하여 뱃지를 모아보세요!</p>
+                </div>
+
+                <div class="badge-grid" id="badge-grid"></div>
+            </section>
+
+            <!-- 5. AI 단어 등록 탭 -->
+            <section id="tab-upload" class="tab-content">
+                <div class="upload-card">
+                    <h2>📸 교재 / 노트 사진 업로드</h2>
+                    <p>공부할 페이지 사진을 올리면 AI가 히라가나 단어와 뜻을 추출해 드립니다.</p>
+                    
+                    <div class="dropzone" id="dropzone">
+                        <input type="file" id="file-input" accept="image/*" hidden>
+                        <div id="dropzone-content">
+                            <span class="upload-icon">🌸</span>
+                            <p style="color: #831843; font-weight: 700;">여기를 클릭하거나 사진을 업로드하세요</p>
+                            <span class="sub-text">(테스트용 자동 추출 시뮬레이션 지원)</span>
+                        </div>
+                        <img id="preview-img" class="hidden" alt="미리보기">
+                    </div>
+
+                    <button id="btn-extract" class="primary-btn full-width" disabled>✨ AI 단어 추출하기</button>
+                </div>
+
+                <div id="extract-result-box" class="result-box hidden">
+                    <h3>🔍 추출된 히라가나 단어 목록</h3>
+                    <div id="extracted-list" class="extracted-list"></div>
+                    <button id="btn-save-extracted" class="success-btn full-width">💾 단어장에 모두 저장하기</button>
+                </div>
+            </section>
+
+            <!-- 6. 단어장 관리 탭 -->
+            <section id="tab-list" class="tab-content">
+                <div class="list-header">
+                    <h2>📚 내 단어장 관리</h2>
+                    <div class="stats-box">
+                        <span>전체: <strong id="stat-total">0</strong></span>
+                        <span>완료: <strong id="stat-complete">0</strong></span>
+                        <span>정답률: <strong id="stat-accuracy">0%</strong></span>
+                    </div>
+                </div>
+
+                <div class="search-filter-bar">
+                    <input type="text" id="search-input" placeholder="히라가나 또는 뜻 검색...">
+                    <button id="btn-reset-data" class="danger-btn">초기화</button>
+                </div>
+
+                <div class="word-table-container">
+                    <table class="word-table">
+                        <thead>
+                            <tr>
+                                <th>⭐️</th>
+                                <th>히라가나</th>
+                                <th>발음</th>
+                                <th>뜻</th>
+                                <th>상태</th>
+                                <th>관리</th>
+                            </tr>
+                        </thead>
+                        <tbody id="word-table-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- 로딩 스피너 오버레이 -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <p>AI가 사진을 분석하고 있어요... 🔍</p>
+    </div>
+
+    <script>
+        // 사진 데이터베이스 세트
+        const INITIAL_WORDS = [
+            // [사진 1]
+            { id: 1, word: "びょういん", reading: "뵤-잉", meaning: "병원", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 2, word: "みっか", reading: "믹카", meaning: "3일, 사흘", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 3, word: "はっせん", reading: "핫센", meaning: "8000, 팔천", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 4, word: "よっつ", reading: "욧쯔", meaning: "4개, 넷", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 5, word: "いっぱい", reading: "이빠이", meaning: "가득", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 6, word: "がっこう", reading: "각코-", meaning: "학교", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 7, word: "はっぴ", reading: "합삐", meaning: "핫피", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 8, word: "けっせき", reading: "켓세키", meaning: "결석", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 9, word: "よっか", reading: "욕카", meaning: "4일, 나흘", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 10, word: "いっしょ", reading: "잇쇼", meaning: "함께함", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 11, word: "なっとう", reading: "낫토-", meaning: "낫토", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 12, word: "きっぷ", reading: "킵뿌", meaning: "표", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 13, word: "ちょっと", reading: "촐토", meaning: "조금, 잠깐", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 14, word: "さんぽ", reading: "삼뽀", meaning: "산책", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 15, word: "べんり", reading: "ベンリ", meaning: "편리함", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 16, word: "まんが", reading: "망가", meaning: "만화", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 17, word: "おかあさん", reading: "오카-상", meaning: "어머니", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 18, word: "おじいさん", reading: "오지-상", meaning: "할아버지", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 19, word: "おねえさん", reading: "오네-상", meaning: "누나, 언니", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 20, word: "えいが", reading: "에-가", meaning: "영화", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 21, word: "とおか", reading: "토-카", meaning: "10일, 열흘", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 22, word: "こうえん", reading: "코-엔", meaning: "공원", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 23, word: "おばさん", reading: "오바상", meaning: "아주머니", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 24, word: "おばあさん", reading: "오바-상", meaning: "할머니", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 25, word: "ゆうめい", reading: "유-메-", meaning: "유명함", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+
+            // [사진 2]
+            { id: 26, word: "あう", reading: "아우", meaning: "만나다", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 27, word: "うえ", reading: "우에", meaning: "위", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 28, word: "ここ", reading: "코코", meaning: "여기", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 29, word: "いく", reading: "이쿠", meaning: "가다", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 30, word: "かお", reading: "카오", meaning: "얼굴", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 31, word: "いえ", reading: "이에", meaning: "집", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 32, word: "きく", reading: "키쿠", meaning: "듣다", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 33, word: "あさ", reading: "아사", meaning: "아침", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 34, word: "いす", reading: "이스", meaning: "의자", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 35, word: "しち", reading: "시찌", meaning: "칠", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 36, word: "うた", reading: "우타", meaning: "노래", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 37, word: "おかし", reading: "오카시", meaning: "과자", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 38, word: "つくえ", reading: "쯔쿠에", meaning: "책상", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 39, word: "ふね", reading: "후네", meaning: "배", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 40, word: "あに", reading: "아니", meaning: "형, 오빠", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 41, word: "はな", reading: "하나", meaning: "꽃", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 42, word: "ひと", reading: "히토", meaning: "사람", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 43, word: "ねこ", reading: "네코", meaning: "고양이", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 44, word: "きのう", reading: "키노-", meaning: "어제", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 45, word: "さいふ", reading: "사이후", meaning: "지갑", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 46, word: "やま", reading: "야마", meaning: "산", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 47, word: "ゆめ", reading: "유메", meaning: "꿈", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 48, word: "なまえ", reading: "나마에", meaning: "이름", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 49, word: "きもの", reading: "키モノ", meaning: "기모노", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 50, word: "ゆかた", reading: "유카타", meaning: "유카타", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 51, word: "さむい", reading: "사무이", meaning: "춥다", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 52, word: "かもく", reading: "카모쿠", meaning: "과목", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 53, word: "やすみ", reading: "야스미", meaning: "방학, 휴가", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 54, word: "さくら", reading: "사쿠라", meaning: "벚꽃", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 55, word: "ほんや", reading: "홍야", meaning: "서점", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 56, word: "まつり", reading: "마쯔り", meaning: "마쓰리, 축제", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 57, word: "わたし", reading: "와타시", meaning: "나, 저", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 58, word: "そば", reading: "소바", meaning: "메밀국수", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 59, word: "いちご", reading: "이찌고", meaning: "딸기", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 60, word: "おみくじ", reading: "오미쿠지", meaning: "오미쿠지", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 61, word: "じゆう", reading: "지유-", meaning: "자유", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 },
+            { id: 62, word: "びよういん", reading: "비요-잉", meaning: "미용실", isComplete: false, isStarred: false, correctCount: 0, totalCount: 0 }
+        ];
+
+        const INITIAL_LEADERBOARD = [
+            { nickname: "구미전자왕", score: 140 },
+            { nickname: "히라가나마스터", score: 100 },
+            { nickname: "일본어천재", score: 80 }
+        ];
+
+        let words = JSON.parse(localStorage.getItem('jp_words')) || INITIAL_WORDS;
+        let leaderboard = JSON.parse(localStorage.getItem('jp_leaderboard')) || INITIAL_LEADERBOARD;
+        
+        let currentStudyList = [];
+        let currentIndex = 0;
+        let extractedStaging = [];
+        let isAnswerChecked = false;
+
+        const tabs = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initTabs();
+            initQuiz();
+            initGame();
+            initRanking();
+            initBadges();
+            initUpload();
+            initWordList();
+            updateStats();
+        });
+
+        function switchTab(tabId) {
+            tabs.forEach(t => {
+                if (t.dataset.tab === tabId) t.classList.add('active');
+                else t.classList.remove('active');
+            });
+            tabContents.forEach(c => {
+                if (c.id === tabId) c.classList.add('active');
+                else c.classList.remove('active');
+            });
+
+            if (tabId === 'tab-study') {
+                loadQuizCards();
+            } else if (tabId === 'tab-ranking') {
+                renderLeaderboard();
+            } else if (tabId === 'tab-badge') {
+                renderBadges();
+            } else if (tabId === 'tab-list') {
+                renderWordTable();
+            }
+        }
+
+        function initTabs() {
+            tabs.forEach(btn => {
+                btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+            });
+        }
+
+        function saveToLocalStorage() {
+            localStorage.setItem('jp_words', JSON.stringify(words));
+            updateStats();
+            renderBadges();
+        }
+
+        // 1. 히라가나 입력 퀴즈 로직
+        const quizCard = document.getElementById('quiz-card');
+        const questionMeaning = document.getElementById('question-meaning');
+        const answerInput = document.getElementById('answer-input');
+        const btnHint = document.getElementById('btn-hint');
+        const feedbackBox = document.getElementById('feedback-box');
+        const btnSubmit = document.getElementById('btn-submit');
+        const btnSkip = document.getElementById('btn-skip');
+        const cardCounter = document.getElementById('card-counter');
+        const filterStatus = document.getElementById('filter-status');
+        const emptyStudy = document.getElementById('empty-study');
+        const quizStar = document.getElementById('quiz-star');
+
+        function initQuiz() {
+            filterStatus.addEventListener('change', loadQuizCards);
+
+            btnSubmit.addEventListener('click', handleCheckOrNext);
+            btnSkip.addEventListener('click', skipQuestion);
+
+            answerInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') handleCheckOrNext();
+            });
+
+            btnHint.addEventListener('click', () => {
+                const item = currentStudyList[currentIndex];
+                if (item) {
+                    btnHint.textContent = `💡 발음: [ ${item.reading} ]`;
+                }
+            });
+
+            quizStar.addEventListener('click', toggleStarCurrent);
+
+            loadQuizCards();
+        }
+
+        function toggleStarCurrent() {
+            const item = currentStudyList[currentIndex];
+            if (!item) return;
+
+            const target = words.find(w => w.id === item.id);
+            if (target) {
+                target.isStarred = !target.isStarred;
+                item.isStarred = target.isStarred;
+                quizStar.textContent = target.isStarred ? '⭐' : '☆';
+                saveToLocalStorage();
+            }
+        }
+
+        function loadQuizCards() {
+            const filter = filterStatus.value;
+            if (filter === 'all') {
+                currentStudyList = [...words];
+            } else if (filter === 'incomplete') {
+                currentStudyList = words.filter(w => !w.isComplete);
+            } else if (filter === 'complete') {
+                currentStudyList = words.filter(w => w.isComplete);
+            } else if (filter === 'starred') {
+                currentStudyList = words.filter(w => w.isStarred);
+            }
+
+            currentIndex = 0;
+            showCurrentQuiz();
+        }
+
+        function showCurrentQuiz() {
+            isAnswerChecked = false;
+            answerInput.value = '';
+            answerInput.disabled = false;
+            btnHint.textContent = '💡 발음 힌트 보기';
+            feedbackBox.className = 'feedback-box hidden';
+            btnSubmit.textContent = '정답 확인 (Enter)';
+
+            if (currentStudyList.length === 0 || currentIndex >= currentStudyList.length) {
+                quizCard.style.display = 'none';
+                emptyStudy.classList.remove('hidden');
+                cardCounter.textContent = `0 / 0`;
+                return;
+            }
+
+            quizCard.style.display = 'flex';
+            emptyStudy.classList.add('hidden');
+
+            const item = currentStudyList[currentIndex];
+            questionMeaning.textContent = item.meaning;
+            cardCounter.textContent = `${currentIndex + 1} / ${currentStudyList.length}`;
+            quizStar.textContent = item.isStarred ? '⭐' : '☆';
+            
+            setTimeout(() => answerInput.focus(), 100);
+        }
+
+        function handleCheckOrNext() {
+            if (isAnswerChecked) {
+                currentIndex++;
+                showCurrentQuiz();
+                return;
+            }
+
+            const userInput = answerInput.value.trim();
+            if (!userInput) {
+                alert('히라가나를 입력해 주세요!');
+                answerInput.focus();
+                return;
+            }
+
+            const item = currentStudyList[currentIndex];
+            const target = words.find(w => w.id === item.id);
+            const isCorrect = userInput === item.word;
+
+            if (target) {
+                target.totalCount = (target.totalCount || 0) + 1;
+                if (isCorrect) {
+                    target.correctCount = (target.correctCount || 0) + 1;
+                    target.isComplete = true;
+                } else {
+                    target.isComplete = false;
+                }
+                saveToLocalStorage();
+            }
+
+            feedbackBox.classList.remove('hidden');
+            if (isCorrect) {
+                feedbackBox.className = 'feedback-box correct';
+                feedbackBox.textContent = `🎉 정답입니다! (${item.word})`;
+            } else {
+                feedbackBox.className = 'feedback-box wrong';
+                feedbackBox.textContent = `❌ 아쉽네요! 정답: ${item.word} [${item.reading}]`;
+            }
+
+            isAnswerChecked = true;
+            answerInput.disabled = true;
+            btnSubmit.textContent = '다음 문제로 ➔';
+            btnSubmit.focus();
+        }
+
+        function skipQuestion() {
+            currentIndex++;
+            showCurrentQuiz();
+        }
+
+        // 2. 🎮 미니게임 4종 시스템
+        let selectedGameMode = 'speed';
+        let gameScore = 0;
+        let gameTimeLeft = 60;
+        let gameTimerId = null;
+        let currentTargetWord = null;
+
+        // 게임 전용 변수
+        let memoryFlippedCards = [];
+        let memoryMatchedPairs = 0;
+        let isMemoryPreviewing = false;
+        let assembleCurrentTyped = "";
+
+        const gameStartView = document.getElementById('game-start-view');
+        const gamePlayView = document.getElementById('game-play-view');
+        const gameOverView = document.getElementById('game-over-view');
+        const gameScoreNum = document.getElementById('game-score-num');
+        const gameTimerNum = document.getElementById('game-timer-num');
+        
+        const gameViewSpeed = document.getElementById('game-view-speed');
+        const gameViewMemory = document.getElementById('game-view-memory');
+        const gameViewBomb = document.getElementById('game-view-bomb');
+        const gameViewAssemble = document.getElementById('game-view-assemble');
+
+        const gameTargetMeaning = document.getElementById('game-target-meaning');
+        const optionsGrid = document.getElementById('options-grid');
+        const memoryGrid = document.getElementById('memory-grid');
+        const previewNotice = document.getElementById('preview-notice');
+        const bombTargetWord = document.getElementById('bomb-target-word');
+        const bombOptionsGrid = document.getElementById('bomb-options-grid');
+        const assembleTargetMeaning = document.getElementById('assemble-target-meaning');
+        const assembleDisplay = document.getElementById('assemble-display');
+        const scrambledGrid = document.getElementById('scrambled-grid');
+
+        const gameResultMsg = document.getElementById('game-result-msg');
+        const playerNickname = document.getElementById('player-nickname');
+
+        function selectGameMode(mode) {
+            selectedGameMode = mode;
+            document.querySelectorAll('.mode-card-btn').forEach(b => b.classList.remove('selected'));
+            document.getElementById(`mode-${mode}`).classList.add('selected');
+        }
+
+        function initGame() {
+            document.getElementById('btn-start-game').addEventListener('click', startGame);
+            document.getElementById('btn-restart-game').addEventListener('click', startGame);
+            document.getElementById('btn-save-score').addEventListener('click', saveScoreToLeaderboard);
+            document.getElementById('btn-reset-assemble').addEventListener('click', resetAssembleDisplay);
+        }
+
+        function startGame() {
+            if (words.length < 6) {
+                alert('게임을 진행하려면 최소 6개 이상의 단어가 필요합니다!');
+                return;
+            }
+
+            gameScore = 0;
+            gameTimeLeft = 60;
+            gameScoreNum.textContent = gameScore;
+            gameTimerNum.textContent = gameTimeLeft;
+
+            gameStartView.classList.add('hidden');
+            gameOverView.classList.add('hidden');
+            gamePlayView.classList.remove('hidden');
+
+            [gameViewSpeed, gameViewMemory, gameViewBomb, gameViewAssemble].forEach(v => v.classList.add('hidden'));
+
+            if (selectedGameMode === 'speed') {
+                gameViewSpeed.classList.remove('hidden');
+                nextSpeedQuestion();
+                startTimer();
+            } else if (selectedGameMode === 'memory') {
+                gameViewMemory.classList.remove('hidden');
+                setupMemoryGame();
+            } else if (selectedGameMode === 'bomb') {
+                gameViewBomb.classList.remove('hidden');
+                nextBombQuestion();
+                startTimer();
+            } else if (selectedGameMode === 'assemble') {
+                gameViewAssemble.classList.remove('hidden');
+                nextAssembleQuestion();
+                startTimer();
+            }
+        }
+
+        function startTimer() {
+            clearInterval(gameTimerId);
+            gameTimerId = setInterval(() => {
+                gameTimeLeft--;
+                gameTimerNum.textContent = gameTimeLeft;
+
+                if (gameTimeLeft <= 0) {
+                    endGame();
+                }
+            }, 1000);
+        }
+
+        /* 2-1. 스피드 4지선다 게임 */
+        function nextSpeedQuestion() {
+            const randomIndex = Math.floor(Math.random() * words.length);
+            currentTargetWord = words[randomIndex];
+
+            gameTargetMeaning.textContent = currentTargetWord.meaning;
+
+            let distractors = words.filter(w => w.id !== currentTargetWord.id);
+            distractors = distractors.sort(() => 0.5 - Math.random()).slice(0, 3);
+
+            const options = [currentTargetWord, ...distractors].sort(() => 0.5 - Math.random());
+
+            optionsGrid.innerHTML = '';
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.textContent = opt.word;
+                btn.addEventListener('click', () => checkSpeedAnswer(opt, btn));
+                optionsGrid.appendChild(btn);
+            });
+        }
+
+        function checkSpeedAnswer(selectedOption, btnElement) {
+            const allBtns = optionsGrid.querySelectorAll('.option-btn');
+            allBtns.forEach(b => b.style.pointerEvents = 'none');
+
+            if (selectedOption.id === currentTargetWord.id) {
+                btnElement.classList.add('correct-anim');
+                gameScore += 10;
+                gameScoreNum.textContent = gameScore;
+
+                const target = words.find(w => w.id === currentTargetWord.id);
+                if (target) {
+                    target.correctCount = (target.correctCount || 0) + 1;
+                    target.totalCount = (target.totalCount || 0) + 1;
+                    target.isComplete = true;
+                    saveToLocalStorage();
+                }
+
+                setTimeout(nextSpeedQuestion, 400);
+            } else {
+                btnElement.classList.add('wrong-anim');
+                allBtns.forEach(b => {
+                    if (b.textContent === currentTargetWord.word) {
+                        b.classList.add('correct-anim');
+                    }
+                });
+
+                setTimeout(nextSpeedQuestion, 700);
+            }
+        }
+
+        /* 2-2. 짝맞추기 메모리 게임 */
+        function setupMemoryGame() {
+            memoryGrid.innerHTML = '';
+            memoryFlippedCards = [];
+            memoryMatchedPairs = 0;
+            isMemoryPreviewing = true;
+
+            const selectedWords = [...words].sort(() => 0.5 - Math.random()).slice(0, 6);
+
+            let cardDeck = [];
+            selectedWords.forEach(w => {
+                cardDeck.push({ pairId: w.id, text: w.meaning, type: 'meaning' });
+                cardDeck.push({ pairId: w.id, text: w.word, type: 'word' });
+            });
+
+            cardDeck = cardDeck.sort(() => 0.5 - Math.random());
+
+            cardDeck.forEach((cData, index) => {
+                const card = document.createElement('div');
+                card.className = 'memory-card flipped';
+                card.dataset.pairId = cData.pairId;
+                card.dataset.index = index;
+                card.dataset.text = cData.text;
+                card.textContent = cData.text;
+
+                card.addEventListener('click', () => flipMemoryCard(card));
+                memoryGrid.appendChild(card);
+            });
+
+            let count = 3;
+            previewNotice.textContent = `👀 ${count}초 동안 카드를 기억하세요!`;
+            
+            const countInterval = setInterval(() => {
+                count--;
+                if (count > 0) {
+                    previewNotice.textContent = `👀 ${count}초 동안 카드를 기억하세요!`;
+                } else {
+                    clearInterval(countInterval);
+                    previewNotice.textContent = `🧠 뒤집힌 카드의 짝을 맞추세요!`;
+                    
+                    const allCards = memoryGrid.querySelectorAll('.memory-card');
+                    allCards.forEach(c => {
+                        c.classList.remove('flipped');
+                        c.textContent = '❓';
+                    });
+
+                    isMemoryPreviewing = false;
+                    startTimer();
+                }
+            }, 1000);
+        }
+
+        function flipMemoryCard(card) {
+            if (isMemoryPreviewing || memoryFlippedCards.length >= 2 || card.classList.contains('flipped') || card.classList.contains('matched')) {
+                return;
+            }
+
+            card.classList.add('flipped');
+            card.textContent = card.dataset.text;
+            memoryFlippedCards.push(card);
+
+            if (memoryFlippedCards.length === 2) {
+                const [card1, card2] = memoryFlippedCards;
+
+                if (card1.dataset.pairId === card2.dataset.pairId) {
+                    setTimeout(() => {
+                        card1.classList.add('matched');
+                        card2.classList.add('matched');
+                        memoryFlippedCards = [];
+                        memoryMatchedPairs++;
+                        gameScore += 20;
+                        gameScoreNum.textContent = gameScore;
+
+                        if (memoryMatchedPairs === 6) {
+                            setTimeout(setupMemoryGame, 500);
+                        }
+                    }, 400);
+                } else {
+                    setTimeout(() => {
+                        card1.classList.remove('flipped');
+                        card2.classList.remove('flipped');
+                        card1.textContent = '❓';
+                        card2.textContent = '❓';
+                        memoryFlippedCards = [];
+                    }, 700);
+                }
+            }
+        }
+
+        /* 2-3. 💣 폭탄 해제 게임 */
+        function nextBombQuestion() {
+            const randomIndex = Math.floor(Math.random() * words.length);
+            currentTargetWord = words[randomIndex];
+
+            bombTargetWord.textContent = currentTargetWord.word;
+
+            let distractors = words.filter(w => w.id !== currentTargetWord.id);
+            distractors = distractors.sort(() => 0.5 - Math.random()).slice(0, 3);
+
+            const options = [currentTargetWord, ...distractors].sort(() => 0.5 - Math.random());
+
+            bombOptionsGrid.innerHTML = '';
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.textContent = opt.meaning;
+                btn.addEventListener('click', () => checkBombAnswer(opt, btn));
+                bombOptionsGrid.appendChild(btn);
+            });
+        }
+
+        function checkBombAnswer(selectedOption, btnElement) {
+            const allBtns = bombOptionsGrid.querySelectorAll('.option-btn');
+            allBtns.forEach(b => b.style.pointerEvents = 'none');
+
+            if (selectedOption.id === currentTargetWord.id) {
+                btnElement.classList.add('correct-anim');
+                gameScore += 15;
+                gameScoreNum.textContent = gameScore;
+                setTimeout(nextBombQuestion, 350);
+            } else {
+                btnElement.classList.add('wrong-anim');
+                gameScore = Math.max(0, gameScore - 5);
+                gameScoreNum.textContent = gameScore;
+                setTimeout(nextBombQuestion, 600);
+            }
+        }
+
+        /* 2-4. 🔤 글자 조합 게임 */
+        function nextAssembleQuestion() {
+            const randomIndex = Math.floor(Math.random() * words.length);
+            currentTargetWord = words[randomIndex];
+
+            assembleTargetMeaning.textContent = currentTargetWord.meaning;
+            assembleCurrentTyped = "";
+            assembleDisplay.innerHTML = '';
+
+            // 히라가나 글자 쪼개기
+            const chars = currentTargetWord.word.split('').sort(() => 0.5 - Math.random());
+
+            scrambledGrid.innerHTML = '';
+            chars.forEach((ch, idx) => {
+                const tile = document.createElement('div');
+                tile.className = 'char-tile';
+                tile.textContent = ch;
+                tile.addEventListener('click', () => typeChar(ch, tile));
+                scrambledGrid.appendChild(tile);
+            });
+        }
+
+        function typeChar(ch, tileElement) {
+            tileElement.classList.add('used');
+            assembleCurrentTyped += ch;
+
+            const charBox = document.createElement('div');
+            charBox.className = 'assembled-char';
+            charBox.textContent = ch;
+            assembleDisplay.appendChild(charBox);
+
+            if (assembleCurrentTyped.length === currentTargetWord.word.length) {
+                if (assembleCurrentTyped === currentTargetWord.word) {
+                    gameScore += 25;
+                    gameScoreNum.textContent = gameScore;
+                    
+                    const target = words.find(w => w.id === currentTargetWord.id);
+                    if (target) {
+                        target.isComplete = true;
+                        saveToLocalStorage();
+                    }
+
+                    setTimeout(nextAssembleQuestion, 400);
+                } else {
+                    setTimeout(resetAssembleDisplay, 500);
+                }
+            }
+        }
+
+        function resetAssembleDisplay() {
+            assembleCurrentTyped = "";
+            assembleDisplay.innerHTML = '';
+            scrambledGrid.querySelectorAll('.char-tile').forEach(t => t.classList.remove('used'));
+        }
+
+        function endGame() {
+            clearInterval(gameTimerId);
+            gamePlayView.classList.add('hidden');
+            gameOverView.classList.remove('hidden');
+
+            let rankMsg = '수고하셨습니다! 👍';
+            if (gameScore >= 120) rankMsg = '👑 구미전자공고 최고 일본어 마스터!';
+            else if (gameScore >= 60) rankMsg = '⚡ 대단한 기억력과 순발력!';
+
+            gameResultMsg.innerHTML = `최종 점수: <strong>${gameScore}점</strong><br><span style="font-size: 0.9rem; color: #db2777;">${rankMsg}</span>`;
+            
+            const maxScore = localStorage.getItem('jp_max_score') || 0;
+            if (gameScore > maxScore) {
+                localStorage.setItem('jp_max_score', gameScore);
+                renderBadges();
+            }
+        }
+
+        function saveScoreToLeaderboard() {
+            const nick = playerNickname.value.trim() || '익명';
+            leaderboard.push({ nickname: nick, score: gameScore });
+            leaderboard.sort((a, b) => b.score - a.score);
+            leaderboard = leaderboard.slice(0, 10);
+
+            localStorage.setItem('jp_leaderboard', JSON.stringify(leaderboard));
+            alert('🏆 랭킹보드에 점수가 등록되었습니다!');
+            switchTab('tab-ranking');
+        }
+
+        // 3. 📋 랭킹보드 로직
+        function initRanking() {
+            renderLeaderboard();
+        }
+
+        function renderLeaderboard() {
+            const leaderboardList = document.getElementById('leaderboard-list');
+            leaderboardList.innerHTML = '';
+
+            if (leaderboard.length === 0) {
+                leaderboardList.innerHTML = `<div style="text-align: center; padding: 20px; color: #be185d;">등록된 점수가 없습니다.</div>`;
+                return;
+            }
+
+            leaderboard.forEach((item, index) => {
+                const div = document.createElement('div');
+                let topClass = '';
+                let medal = `${index + 1}`;
+
+                if (index === 0) { topClass = 'top1'; medal = '🥇'; }
+                else if (index === 1) { topClass = 'top2'; medal = '🥈'; }
+                else if (index === 2) { topClass = 'top3'; medal = '🥉'; }
+
+                div.className = `rank-item ${topClass}`;
+                div.innerHTML = `
+                    <div class="rank-info">
+                        <span class="rank-num">${medal}</span>
+                        <span class="rank-name">${item.nickname}</span>
+                    </div>
+                    <span class="rank-score">${item.score}점</span>
+                `;
+                leaderboardList.appendChild(div);
+            });
+        }
+
+        // 4. 🎖️ 칭호 & 뱃지 시스템 로직
+        function initBadges() {
+            renderBadges();
+        }
+
+        function renderBadges() {
+            const badgeGrid = document.getElementById('badge-grid');
+            badgeGrid.innerHTML = '';
+
+            const completedCount = words.filter(w => w.isComplete).length;
+            const maxScore = parseInt(localStorage.getItem('jp_max_score') || '0');
+            
+            let resolvedWrongCount = 0;
+            words.forEach(w => {
+                if (w.isComplete && (w.totalCount - w.correctCount) > 0) {
+                    resolvedWrongCount += 1;
+                }
+            });
+
+            const badgesList = [
+                {
+                    id: 'b1',
+                    icon: '🐣',
+                    title: '히라가나 초보',
+                    desc: '단어 50개 암기 달성',
+                    isUnlocked: completedCount >= 50,
+                    progress: `${completedCount}/50`
+                },
+                {
+                    id: 'b2',
+                    icon: '👑',
+                    title: '구미전자공고 일본어 마스터',
+                    desc: '게임 100점 이상 달성',
+                    isUnlocked: maxScore >= 100,
+                    progress: `${maxScore}/100점`
+                },
+                {
+                    id: 'b3',
+                    icon: '⚔️',
+                    title: '끈기의 오답 파괴자',
+                    desc: '틀렸던 단어 20개 극복 완료',
+                    isUnlocked: resolvedWrongCount >= 20,
+                    progress: `${resolvedWrongCount}/20`
+                }
+            ];
+
+            badgesList.forEach(b => {
+                const div = document.createElement('div');
+                div.className = `badge-card ${b.isUnlocked ? 'unlocked' : ''}`;
+                div.innerHTML = `
+                    <div class="badge-icon">${b.icon}</div>
+                    <div class="badge-info">
+                        <h3>${b.title}</h3>
+                        <p>${b.desc}</p>
+                    </div>
+                    <div class="badge-status">${b.isUnlocked ? '달성 완료 🎉' : b.progress}</div>
+                `;
+                badgeGrid.appendChild(div);
+            });
+        }
+
+        // 5. 사진 업로드 시뮬레이션
+        const dropzone = document.getElementById('dropzone');
+        const fileInput = document.getElementById('file-input');
+        const previewImg = document.getElementById('preview-img');
+        const dropzoneContent = document.getElementById('dropzone-content');
+        const btnExtract = document.getElementById('btn-extract');
+        const loadingOverlay = document.getElementById('loading-overlay');
+        const extractResultBox = document.getElementById('extract-result-box');
+        const extractedList = document.getElementById('extracted-list');
+
+        function initUpload() {
+            dropzone.addEventListener('click', () => fileInput.click());
+
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) handleFile(file);
+            });
+
+            btnExtract.addEventListener('click', simulateAIExtract);
+            document.getElementById('btn-save-extracted').addEventListener('click', saveExtractedWords);
+        }
+
+        function handleFile(file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                previewImg.src = e.target.result;
+                previewImg.classList.remove('hidden');
+                dropzoneContent.classList.add('hidden');
+                btnExtract.disabled = false;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function simulateAIExtract() {
+            loadingOverlay.classList.remove('hidden');
+
+            setTimeout(() => {
+                loadingOverlay.classList.add('hidden');
+                
+                extractedStaging = [
+                    { word: 'とうきょう', reading: '토-쿄-', meaning: '도쿄' },
+                    { word: 'せんせい', reading: '센세-', meaning: '선생님' },
+                    { word: 'ともだち', reading: '토모다찌', meaning: '친구' }
+                ];
+
+                extractedList.innerHTML = '';
+                extractedStaging.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'extracted-item';
+                    div.innerHTML = `<span><strong>${item.word}</strong> (${item.reading})</span><span>${item.meaning}</span>`;
+                    extractedList.appendChild(div);
+                });
+
+                extractResultBox.classList.remove('hidden');
+            }, 1200);
+        }
+
+        function saveExtractedWords() {
+            extractedStaging.forEach(item => {
+                const newEntry = {
+                    id: Date.now() + Math.random(),
+                    word: item.word,
+                    reading: item.reading,
+                    meaning: item.meaning,
+                    isComplete: false,
+                    isStarred: false,
+                    correctCount: 0,
+                    totalCount: 0
+                };
+                words.push(newEntry);
+            });
+
+            saveToLocalStorage();
+            alert('🎉 단어가 성공적으로 단어장에 추가되었습니다!');
+            extractResultBox.classList.add('hidden');
+            previewImg.classList.add('hidden');
+            dropzoneContent.classList.remove('hidden');
+            btnExtract.disabled = true;
+            fileInput.value = '';
+            switchTab('tab-study');
+        }
+
+        // 6. 단어장 관리 로직
+        const wordTableBody = document.getElementById('word-table-body');
+        const searchInput = document.getElementById('search-input');
+
+        function initWordList() {
+            searchInput.addEventListener('input', renderWordTable);
+            document.getElementById('btn-reset-data').addEventListener('click', () => {
+                if (confirm('모든 단어 데이터를 사진 학습 데이터로 초기화하시겠습니까?')) {
+                    words = [...INITIAL_WORDS];
+                    saveToLocalStorage();
+                    renderWordTable();
+                    loadQuizCards();
+                }
+            });
+        }
+
+        function renderWordTable() {
+            const keyword = searchInput.value.toLowerCase();
+            wordTableBody.innerHTML = '';
+
+            const filtered = words.filter(w => 
+                w.word.toLowerCase().includes(keyword) || 
+                w.meaning.toLowerCase().includes(keyword) || 
+                w.reading.toLowerCase().includes(keyword)
+            );
+
+            if (filtered.length === 0) {
+                wordTableBody.innerHTML = `<tr><td colspan="6" style="text-align: center; padding: 20px; color: #be185d;">검색된 단어가 없습니다.</td></tr>`;
+                return;
+            }
+
+            filtered.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td style="cursor:pointer;" onclick="toggleStarInTable(${item.id})">${item.isStarred ? '⭐' : '☆'}</td>
+                    <td><strong>${item.word}</strong></td>
+                    <td>${item.reading}</td>
+                    <td>${item.meaning}</td>
+                    <td><span class="badge ${item.isComplete ? 'complete' : 'incomplete'}">${item.isComplete ? '완료' : '미완료'}</span></td>
+                    <td><button class="small-del-btn" onclick="deleteWord(${item.id})">🗑️</button></td>
+                `;
+                wordTableBody.appendChild(tr);
+            });
+        }
+
+        function toggleStarInTable(id) {
+            const target = words.find(w => w.id === id);
+            if (target) {
+                target.isStarred = !target.isStarred;
+                saveToLocalStorage();
+                renderWordTable();
+            }
+        }
+
+        function deleteWord(id) {
+            words = words.filter(w => w.id !== id);
+            saveToLocalStorage();
+            renderWordTable();
+            loadQuizCards();
+        }
+
+        function updateStats() {
+            const total = words.length;
+            const complete = words.filter(w => w.isComplete).length;
+            
+            let totalAttempts = 0;
+            let totalCorrect = 0;
+            words.forEach(w => {
+                totalAttempts += (w.totalCount || 0);
+                totalCorrect += (w.correctCount || 0);
+            });
+
+            const accuracy = totalAttempts > 0 ? Math.round((totalCorrect / totalAttempts) * 100) : 0;
+
+            document.getElementById('stat-total').textContent = total;
+            document.getElementById('stat-complete').textContent = complete;
+            document.getElementById('stat-accuracy').textContent = `${accuracy}%`;
+        }
+    </script>
+</body>
+</html>
